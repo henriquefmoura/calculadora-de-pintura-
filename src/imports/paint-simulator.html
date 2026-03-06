@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Simulador de Pintura</title>
+</head>
+
+<body>
+
+<h2>Simulador de Pintura - Estimativa</h2>
+
+<label>Tamanho do imóvel (m²):</label>
+<input type="number" id="area"><br><br>
+
+<label>Quantidade de cômodos:</label>
+<input type="number" id="comodos"><br><br>
+
+<button onclick="calcular()">Calcular</button>
+
+<h3 id="resultado"></h3>
+
+<script>
+
+function calcular(){
+
+let area = parseFloat(document.getElementById("area").value);
+let comodos = parseInt(document.getElementById("comodos").value);
+
+let fator = 3.7;
+
+if(comodos <= 2){
+fator = 3.2;
+}
+else if(comodos == 3){
+fator = 3.5;
+}
+else if(comodos <= 5){
+fator = 3.7;
+}
+else{
+fator = 4.0;
+}
+
+let areaPintura = area * fator;
+
+let preco = 0;
+
+if(areaPintura <= 15){
+preco = 399.90;
+}
+else if(areaPintura <= 50){
+preco = areaPintura * 22.90;
+}
+else if(areaPintura <= 100){
+preco = areaPintura * 21.90;
+}
+else if(areaPintura <= 200){
+preco = areaPintura * 20.90;
+}
+else if(areaPintura <= 500){
+preco = areaPintura * 18.90;
+}
+else{
+preco = areaPintura * 17.90;
+}
+
+document.getElementById("resultado").innerHTML =
+"Área estimada de pintura: " + areaPintura.toFixed(1) + " m² <br>" +
+"Valor estimado: R$ " + preco.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>

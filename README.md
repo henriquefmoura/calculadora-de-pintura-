@@ -1,2 +1,11 @@
-# calculadora-de-pintura-
-Calculadora de pintura 
+
+  # Calculadora
+
+  This is a code bundle for Calculadora. The original project is available at https://www.figma.com/design/gActXkTv7BplDaLjqrIcnU/Calculadora.
+
+  ## Running the code
+
+  Run `npm i` to install the dependencies.
+
+  Run `npm run dev` to start the development server.
+  
